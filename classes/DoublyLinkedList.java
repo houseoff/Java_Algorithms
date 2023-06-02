@@ -18,7 +18,7 @@ public class DoublyLinkedList {
             return this.previous;
         }
 
-        // Геттер next
+        // Геттер value
         public int getValue() {
             return this.value;
         }
