@@ -1,15 +1,42 @@
-// Двусвязный список с реализацией методов очереди
-public class lecture3_2 {
+package classes;
+// Двусвязный список
+public class DoublyLinkedList {
     
     // Объект узла (нода)
     public class Node {
         int value;
         Node next;
         Node previous;
+
+        // Геттер next
+        public Node getNext() {
+            return this.next;
+        }
+
+        // Геттер previous
+        public Node getPrevious() {
+            return this.previous;
+        }
+
+        // Геттер next
+        public int getValue() {
+            return this.value;
+        }
     }
 
     Node head;
     Node tail;
+    Integer count = 0;
+
+    // Геттер count
+    public int getCount() {
+        return this.count;
+    }
+
+    // Геттер head
+    public Node getHead() {
+        return head;
+    }
 
     // Поиск элемемента в списке. Сложность = O(n)
     public Node find(int value) {
@@ -23,6 +50,7 @@ public class lecture3_2 {
         return null;
     }
 
+    // Добавление элемента в конец списка. Сложность = O(1)
     public void add(int value) {
         Node node = new Node();
         node.value = value;
@@ -35,9 +63,11 @@ public class lecture3_2 {
             tail = node;
         }
 
+        count++;
     }
 
-    // Добавление элемента в список
+    // Добавление элемента в список. Сложность = O(1).
+    // При этом поиск ноды занимает O(n)
     public void add(int value, Node node) {
         Node next = node.next;
         Node newnode = new Node();
@@ -51,9 +81,11 @@ public class lecture3_2 {
             newnode.next = next;
         }
 
+        count++;
     }
 
-    // Удаление элемента из списка
+    // Удаление элемента из списка. Сложность = O(1).
+    // При этом поиск ноды занимает O(n)
     public void delete(Node node) {
         Node previous = node.previous;
         Node next = node.next;
@@ -70,9 +102,11 @@ public class lecture3_2 {
                 next.previous = previous;
             }
         }
+
+        if (count > 0) count--;
     }
 
-
+    // Разворот списка
     public void reverse() {
         Node currNode = head;
         while (currNode != null) {
@@ -93,25 +127,4 @@ public class lecture3_2 {
             currNode = next;
         }
     }
-
-    // Добавление элемента в очередь
-    public void push(int value) {
-        Node node = new Node();
-        node.value = value;
-        node.next = head;
-        head.previous = node;
-        head = node;
-    }
-
-    // Извлечение элемента из очереди
-    public Integer peek() {
-        Integer result = null;
-        if (tail != null) {
-            result = tail.value;
-            tail.previous.next = null;
-            tail = tail.previous;
-        }
-        return result;
-    }
-
 }
