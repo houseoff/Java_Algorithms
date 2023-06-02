@@ -1,10 +1,9 @@
-package Algorithms;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class lecture1 {
+    
     public static void main(String[] args) {
         AtomicInteger counter = new AtomicInteger(0);
         int fib = fib(10, counter);

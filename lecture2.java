@@ -1,5 +1,3 @@
-package Algorithms;
-
 public class lecture2 {
     public static void main(String[] args) {
         int[] array = new int[]{4,2,5,8,1,9,2,3,6,5};

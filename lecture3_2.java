@@ -1,5 +1,3 @@
-package Algorithms;
-
 // Двусвязный список с реализацией методов очереди
 public class lecture3_2 {
     

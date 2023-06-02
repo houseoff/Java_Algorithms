@@ -1,5 +1,3 @@
-package Algorithms;
-
 // Односвязный список с реализацией методов стека
 public class lecture3_1 {
 
