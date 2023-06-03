@@ -10,7 +10,7 @@ public class homework2 {
         long endTime = System.currentTimeMillis() - startTime;
 
         System.out.println("Time: " + endTime);
-        // printArray(array);
+        printArray(array);
     }
 
     // Заполнение массива случайными числами
